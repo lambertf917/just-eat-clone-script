@@ -56,7 +56,7 @@ function Review({ onOverlayPress, theme, orderId, rating }, ref) {
     mutate({variables: { order: orderId, description, rating: ratingRef.current }})
   }
   return (
-    <Modalize snapPoint={SNAP_HEIGHT} handlePosition='inside' ref={ref} withHandle={false} adjustToContentHeight modalStyle={{ borderWidth: StyleSheet.hairlineWidth }} onOverlayPress={onOverlayPress}>
+    <Modalize snapPoint={SNAP_HEIGHT} handlePosition='inside' ref={ref} withHandle={false} adjustToContentHeight modalStyle={{ borderWidth: StyleSheet.hairlineWidth }} onOverlayPress={onOverlayPress} scrollViewProps={{ keyboardShouldPersistTaps: 'handled' }}>
       <View style={styles.container(theme)}>
         <View style={styles.headingContainer}>
           <TextDefault bolder H3 textColor={theme.gray900}>
